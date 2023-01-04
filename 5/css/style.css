@@ -14,7 +14,7 @@
   margin: 0 auto;
   position: relative;
   max-width: 1200px;
-  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .visually-hidden {
   position: absolute;
@@ -337,11 +337,6 @@
     width: 170px;
     text-align: center;
   }
-  .advantages__attraction-text {
-    overflow: auto;
-    max-width: 300px;
-    max-height: 130px;
-  }
   .advantages__attractions-header {
     text-align: center;
   }
@@ -368,6 +363,9 @@
     padding: 60px 33px;
   }
   .advantages__attraction-text {
+    overflow: auto;
+    max-width: 300px;
+    max-height: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
