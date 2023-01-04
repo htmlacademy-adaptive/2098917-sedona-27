@@ -5,7 +5,7 @@
   font-size: 14px;
   line-height: 21px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -14,7 +14,7 @@
   margin: 0 auto;
   position: relative;
   max-width: 1200px;
-  box-shadow: -5px 0 20px 0 rgba(0, 0, 0, 0.3), 5px 0 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
 }
 .visually-hidden {
   position: absolute;
@@ -129,17 +129,12 @@
     display: none;
   }
   .main-nav__list {
-    display: flex;
-    flex-direction: row;
-    box-shadow: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
   }
   .main-nav__item {
     box-shadow: none;
     background-color: #ffffff;
-  }
-  .main-nav__item--hidden {
-    color: #ffffff;
-    display: block;
   }
   .main-nav__link {
     color: #000000;
@@ -162,9 +157,8 @@
   padding: 52px 0 67px;
   background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/index-background.jpg") center center;
 }
-.hero-img {
+.hero__img {
   width: 100%;
-  /* width: 280px; */
   object-fit: cover;
 }
 @media (min-width: 768px) {
@@ -212,18 +206,21 @@
   flex-direction: column;
 }
 .advantages__item,
-.advantages__attraction {
+.advantages__attraction,
+.advantages__img-wrapper {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-content: center;
 }
 .advantages__sublist {
   list-style: none;
-  margin: 0;
   padding: 23px 18px 46px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   background-color: #ffffff;
-  align-self: center;
 }
 .advantages__numbered {
   padding: 40px 18px 31px;
@@ -233,6 +230,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 .advantages__numbered--ornament {
   padding-top: 70px;
@@ -243,10 +241,10 @@
   color: #ffffff;
 }
 .advantages__numbered--gray {
-  background-color: #d6d6d6;
+  background-color: #eeeeee;
   padding-top: 24px;
   padding-bottom: 24px;
-  box-shadow: inset 1px -162px 0 30px #eeeeee;
+  border-bottom: solid 1px #d6d6d6;
 }
 .advantages__numbered-header {
   font-family: "PT Sans", "Arial", sans-serif;
@@ -261,10 +259,13 @@
 .advantages__numbered-description {
   text-align: center;
   text-transform: uppercase;
+  padding: 0;
+  margin: 0;
 }
 .advantages__img-wrapper {
-  align-self: center;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
   width: 100%;
 }
 .advantages__img {
@@ -275,16 +276,19 @@
   align-self: center;
   display: inline-block;
 }
-.advantages__attraction {
+.advantages__attraction-text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   padding-left: 47px;
 }
-.advantages__attraction--accomodation {
+.advantages__attraction-text--accomodation {
   background: url("../img/index/house-icon.svg") left top 0/40px 40px no-repeat;
 }
-.advantages__attraction--food {
+.advantages__attraction-text--food {
   background: url("../img/index/burger-icon.svg") left top 0/40px 35px no-repeat;
 }
-.advantages__attraction--souvenirs {
+.advantages__attraction-text--souvenirs {
   background: url("../img/index/gift-icon.svg") left top 0/40px 40px no-repeat;
 }
 .advantages__attractions-header {
@@ -301,32 +305,51 @@
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
+  .advantages__item {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
   .advantages__numbered {
     box-sizing: border-box;
-    padding: 52px 33px 31px;
-    height: 260px;
+    padding: 52px 33px 30px;
+    flex-grow: 1;
   }
   .advantages__numbered--gray {
     background-color: #eeeeee;
-    padding-top: 24px;
-    padding-bottom: 24px;
     box-shadow: none;
+    border: none;
+    padding-bottom: 50px;
+  }
+  .advantages__numbered--blue {
+    max-height: 260px;
+    overflow: auto;
   }
   .advantages__numbered--ornament {
     padding-top: 52px;
     background: #81b3d2;
   }
   .advantages__numbered-header {
-    padding: 0;
+    padding-top: 0;
     margin: 0 auto;
     width: 170px;
     text-align: center;
   }
+  .advantages__attraction-text {
+    overflow: auto;
+    max-width: 300px;
+    max-height: 130px;
+  }
   .advantages__attractions-header {
     text-align: center;
   }
-  .advantages__attractions-description {
+  .advantages__numbered-text {
+    overflow: auto;
     max-width: 300px;
+  }
+  .advantages__attractions-description {
     text-align: center;
   }
   .advantages__sublist {
@@ -342,16 +365,33 @@
     justify-content: center;
     align-content: center;
     box-sizing: border-box;
-    padding: 145px 33px 60px;
+    padding: 60px 33px;
   }
-  .advantages__attraction--accomodation {
-    background: url("../img/index/house-icon.svg") center top 60px/77px 72px no-repeat;
+  .advantages__attraction-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-left: 0;
   }
-  .advantages__attraction--food {
-    background: url("../img/index/burger-icon.svg") center top 60px/80px 70px no-repeat;
+  .advantages__attraction-text--accomodation {
+    background: url("../img/index/house-icon.svg") center top 0/77px 70px no-repeat;
   }
-  .advantages__attraction--souvenirs {
-    background: url("../img/index/gift-icon.svg") center top 60px/66px 75px no-repeat;
+  .advantages__attraction-text--food {
+    background: url("../img/index/burger-icon.svg") center top 0/80px 70px no-repeat;
+  }
+  .advantages__attraction-text--souvenirs {
+    background: url("../img/index/gift-icon.svg") center top 0/66px 75px no-repeat;
+  }
+}
+@media (min-width: 1200px) {
+  .advantages__numbered {
+    padding: 52px 50px;
+  }
+  --gray {
+    padding-bottom: 40px;
+    padding-top: 63px;
   }
 }
 @media (min-width: 768px) {
@@ -379,7 +419,7 @@
     grid-column: 1 / 4;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 }
 .booking__header,
@@ -970,7 +1010,7 @@
     padding-top: 80px;
     padding-bottom: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 120px;
   }
 }
@@ -1196,7 +1236,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .photo-grid-one {
+  .photo-grid__one {
     grid-column: 1 / 3;
   }
 }
@@ -1206,7 +1246,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .photo-grid-one {
+  .photo-grid__one {
     grid-column: 1 / 4;
   }
 }
@@ -1225,7 +1265,7 @@
 }
 @media (min-width: 768px) {
   .photos {
-    margin-bottom: 60px;
+    padding-bottom: 60px;
   }
 }
 .photo-card {
