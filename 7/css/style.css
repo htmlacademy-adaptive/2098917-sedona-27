@@ -198,7 +198,7 @@
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .hero {
-    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/index/mobile/back-mobile.jpg@2x.jpg") top center / cover no-repeat;
+    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/retinized/mobile/back-mobile.jpg@2x.jpg") top center / cover no-repeat;
     background-size: 901px auto;
   }
 }
@@ -219,7 +219,7 @@
 @media (min-width: 768px) {
   .hero {
     padding: 80px 0 80px;
-    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/index/tablet/back-tablet-desktop.jpg.jpg") top center / cover no-repeat;
+    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/retinized/tablet/back-tablet-desktop@1x.jpg") top center / cover no-repeat;
     background-size: 1200px auto;
   }
   .hero--nojs {
@@ -228,28 +228,42 @@
   .hero--small {
     width: 100%;
     padding: 95px 0 117px;
-    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/index/tablet/back-tablet-desktop.jpg.jpg") bottom center no-repeat;
+    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/retinized/tablet/back-tablet-desktop@1x.jpg") bottom center no-repeat;
     background-size: 1200px auto;
   }
-  .hero .hero img {
+  .hero__img {
     width: 461px;
-    height: auto;
+    height: 350px;
   }
-  .hero .hero__img-secondary {
+  .hero__img--small {
+    width: 457px;
+    height: 78px;
+  }
+  .hero__img-secondary {
     width: 100%;
     object-fit: cover;
   }
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
-    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/index/tablet/back-tablet-desktop.jpg@2x.jpg") top center / cover no-repeat;
+    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/retinized/tablet/back-tablet-desktop.jpg@2x.jpg") top center / cover no-repeat;
     background-size: 1200px auto;
   }
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 2dppx) {
   .hero--small {
-    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/index/tablet/back-tablet-desktop.jpg@2x.jpg") bottom center no-repeat;
+    background: url("../img/index/ornament.svg") bottom center no-repeat, url("../img/index/retinized/tablet/back-tablet-desktop.jpg@2x.jpg") bottom center no-repeat;
     background-size: 1200px auto;
+  }
+}
+@media (min-width: 1200px) {
+  .hero__img {
+    width: 460px;
+    height: 350px;
+  }
+  .hero__img--small {
+    width: 460px;
+    height: 80px;
   }
 }
 .intro {
@@ -1546,9 +1560,7 @@
 }
 @media (min-width: 1200px) {
   .video__thumbnail-fallback {
-    display: flex;
     width: 800px;
-    height: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
